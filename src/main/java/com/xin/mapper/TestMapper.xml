@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xin.dao.TestDao">
+	
+	
+	<select id="getSexByName" parameterType="String" resultType="String">
+		select Ssex "ssex" from student where S=${name}
+	</select>
+	 
+	 
+	<select id="getList" resultType="String">
+	 	SELECT
+	       Sname "sname"
+        FROM
+	        student
+	</select>
+	
+	<insert id="save" parameterType="map">
+	 insert  into student (S,Sname,Sage,Ssex) values(#{s},#{sname},#{sage},#{ssex})
+	</insert>
+	
+	<update id="update" parameterType="String">
+	update student set Sname="wj" where S=#{s}
+	</update>
+</mapper>
